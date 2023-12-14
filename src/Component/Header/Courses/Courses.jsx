@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Course from "../Course/Course";
 
-const Courses = () => {
+const Courses = ({handleAddToCourses}) => {
 
     const [courses, setCourses] = useState([]);
 
@@ -16,7 +16,7 @@ const Courses = () => {
         <div className="md: w-2/3 ">
             <div className="grid grid-cols-3 gap-10">
                 {
-                    courses.map(course => <Course key={courses.id} course={course}></Course>)
+                    courses.map(course => <Course key={courses.id} handleAddToCourses={handleAddToCourses} course={course}></Course>)
                 }
             </div>
         </div>

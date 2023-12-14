@@ -1,7 +1,7 @@
 import { FaDollarSign } from "react-icons/fa6";
 import { IoBookOutline } from "react-icons/io5";
 
-const Course = ({course}) => {
+const Course = ({course, handleAddToCourses}) => {
     const {id, img, name, course_credit, price, course_details} = course;
     return (
         <div>
@@ -19,7 +19,7 @@ const Course = ({course}) => {
                             <IoBookOutline className="mt-1 mr-2"></IoBookOutline>
                             <p>Credit {course_credit} hr</p>
                         </div>
-                        <button className="bg-blue-800 rounded-lg w-[280px] h-10 mt-3 text-white">Select</button>
+                        <button className="bg-blue-800 rounded-lg w-[280px] h-10 mt-3 text-white" onClick={() =>handleAddToCourses()}>Select</button>
                     </div>
                 </div>
             </div>
