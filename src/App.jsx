@@ -9,7 +9,8 @@ function App() {
   const [bookmarks, setBookmarks] = useState([]);
 
   const handleAddToCourses = course =>{
-    console.log("This course is added")
+    const newBookmarks = [...bookmarks, course];
+    setBookmarks(newBookmarks);
   }
 
   return (
@@ -17,7 +18,7 @@ function App() {
       <Header></Header>
       <div className='md: flex max-w-7xl mx-auto'>
         <Courses handleAddToCourses={handleAddToCourses}></Courses>
-        <Bookmarks></Bookmarks>
+        <Bookmarks bookmarks={bookmarks}></Bookmarks>
       </div>
     </div>
   )
